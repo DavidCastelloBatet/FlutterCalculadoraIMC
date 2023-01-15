@@ -1,5 +1,6 @@
-import 'package:bmi_calculadora/widgets/reusable_card.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bmi_calculadora/widgets/widgets.dart';
 
 const bottomContainerHeight = 80.0;
 const Color activeCardColour = Color(0xFF1D1E33);
@@ -20,12 +21,23 @@ class HomePage extends StatelessWidget {
         children: [
           Expanded(
             child: Row(
-              children: [
+              children: const [
                 Expanded(
-                  child: ReusableCard(colorFons: activeCardColour),
+                  child: ReusableCard(
+                    colorFons: activeCardColour,
+                    cardChild: GenderWidget(
+                        iconGender: Icon(FontAwesomeIcons.mars),
+                        textGender: 'Home'),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(colorFons: activeCardColour),
+                  child: ReusableCard(
+                    colorFons: activeCardColour,
+                    cardChild: GenderWidget(
+                      iconGender: Icon(FontAwesomeIcons.venus),
+                      textGender: 'Dona',
+                    ),
+                  ),
                 ),
               ],
             ),
